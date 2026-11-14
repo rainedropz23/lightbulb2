@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tutorials</title>
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    
+    <div class="snowfall" aria-hidden="true"></div>
+
+    <nav class="back-nav">
+        <a class="back-btn" href="portfolio.html"><span class="arrow">&larr;</span> Back to Portfolio</a>
+    </nav>
+
+    <h1 id="top">Contact</h1>
+
+    <form class="contact-form" action="#" method="post" onsubmit="return showContactInfo()">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function showContactInfo(){
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+
+            alert("Name: " + name + "\nEmail: " + email + "\nSubject: " + subject + "\nMessage: " + message);
+
+            return false;
+        }
+    </script>
+
+    <p class="copyright">&copy; 2026 Raine Gerald D. Mariano</p>
+
+    <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3863.10188312878!2d120.9962295!3d14.478838699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ce7b78ac639b%3A0x66fdf9991e1d765c!2sOlivarez%20College%20Para%C3%B1aque!5e0!3m2!1sen!2sph!4v1789184981531!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+
+</body>
+<footer>
+    <a href="#top">GO TO TOP</a>
+</footer>
+</html>
