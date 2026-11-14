@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tutorials</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    
+    <div class="snowfall" aria-hidden="true"></div>
+
+    <nav class="back-nav">
+        <a class="back-btn" href="portfolio.html"><span class="arrow">&larr;</span> Back to Portfolio</a>
+    </nav>
+
+    <h1 id="top">Welcome to Raine's Portfolio!</h1>  
+
+    <script>
+        
+        var SPEED = 70;   
+        var DELAY = 400;  
+
+        var heading = document.getElementById("top");
+        var text = heading.textContent.trim();
+        var chars = [];
+
+        
+        heading.textContent = "";
+        for (var i = 0; i < text.length; i++) {
+            var span = document.createElement("span");
+            span.className = "tw-char";
+            span.textContent = text[i];
+            heading.appendChild(span);
+            chars.push(span);
+        }
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            // Respect "reduce motion" settings: just show the text
+            chars.forEach(function (c) { c.classList.add("show"); });
+        } else {
+            var index = 0;
+            var last = null;
+            setTimeout(function () {
+                var timer = setInterval(function () {
+                    if (last) last.classList.remove("cursor");
+                    var c = chars[index];
+                    c.classList.add("show", "cursor");
+                    last = c;
+                    index++;
+                    if (index >= chars.length) clearInterval(timer);
+                }, SPEED);
+            }, DELAY);
+        }
+    </script>
+</body>
+<footer>
+    <a href="#top">GO TO TOP</a>
+</footer>
+</html>
