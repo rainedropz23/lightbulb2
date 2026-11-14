@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surprise Party Lightbulb</title>
+  <link rel="stylesheet" href="bulb.css">
+</head>
+<body>
+
+  <main class="room" id="room" data-state="off">
+
+    <section class="party" aria-live="polite">
+      <img src="../images/surprise.jpg" alt="Surprise!">
+    </section>
+
+    <section class="bulb-area" aria-label="Lightbulb">
+      <div class="glow" aria-hidden="true"></div>
+
+      <div class="bulb bulb-off">
+        <img src="../images/lb1.png" alt="Lightbulb, off">
+      </div>
+      <div class="bulb bulb-flicker">
+        <img src="../images/lb2.png" alt="Lightbulb, about to turn on">
+      </div>
+      <div class="bulb bulb-on">
+        <img src="../images/lb3.png" alt="Lightbulb, on">
+      </div>
+    </section>
+
+    <section class="switch-area">
+      <button class="switch" id="switch" type="button"
+              role="switch" aria-checked="false" aria-label="Light switch">
+        <span class="plate">
+          <span class="lever"></span>
+        </span>
+      </button>
+      <p class="hint" id="hint"></p>
+    </section>
+
+  </main>
+
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <script src="bulb.js"></script>
+</body>
+</html>
